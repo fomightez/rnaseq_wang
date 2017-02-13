@@ -9,7 +9,7 @@ Docker container for RNA-seq pipeline as described in [Wang et al 2016 (PMID: 26
 Contents
 --------
 
-Complete Linux-based container for all command line processing as directed in  
+Complete Linux-based container for all command line processing as directed in:  
 
 Using RNA-seq for Analysis of Differential Gene Expression in Fungal Species.
 Wang C, Schröder MS, Hammel S, Butler G.
