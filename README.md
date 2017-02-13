@@ -1,9 +1,10 @@
 [![](https://images.microbadger.com/badges/image/fomightez/rnaseqwang.svg)](https://microbadger.com/images/fomightez/rnaseqwang "Get your own image badge on microbadger.com")  
 
 # rnaseq_wang
-Docker container for RNA-seq pipeline as described in Wang et al 2016 PMID:26483013
+Docker container for RNA-seq pipeline as described in [Wang et al 2016 (PMID: 26483013)](https://www.ncbi.nlm.nih.gov/pubmed/26483013)
 
-[Docker image](https://hub.docker.com/r/fomightez/rnaseqwang/) at Docker Hub.
+
+[The Docker image is available](https://hub.docker.com/r/fomightez/rnaseqwang/) at Docker Hub.
 
 Contents
 --------
@@ -29,4 +30,4 @@ Includes:
 * R
 * Bioconductor and needed packages
 
-The specific versions and sources are made clear in [the Dockerfile](https://github.com/fomightez/rnaseq_wang/blob/master/Dockerfile).
+*Specific versions and sources are made clear in [the Dockerfile](https://github.com/fomightez/rnaseq_wang/blob/master/Dockerfile).*
