@@ -71,8 +71,6 @@ Usage
 
 	If you type `ls` to list the files present in the current directory and see nothing, continue on to step #2. If you already have the data in your local `data` directory on your computer, you should see it in `/data` directory within your container.
 
-
-
 2. Download the data.
 
 	Using your browser or another window of command line interface with the wget or curl command, download the `supp_data.tar.gz` file from http://cgob.ucd.ie/supp_data/supp_data.tar.gz .
