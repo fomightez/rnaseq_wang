@@ -48,9 +48,7 @@ RUN wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.4.4/sratoolkit.2.4.4-ubunt
     tar zxfv sratoolkit.2.4.4-ubuntu64.tar.gz && \
     cp -r sratoolkit.2.4.4-ubuntu64/bin/* /usr/bin
 
-# Default command
-WORKDIR /data
-CMD ["bash"]
+
 
 
 #Install FastQC
@@ -130,6 +128,9 @@ ENV PATH $PATH:/bin/bowtie2-2.3.0
 #Install R
 RUN apt-get install -y libicu-dev
 RUN apt-get install -y xorg-dev
+RUN add-apt-repository -y "ppa:edd/misc"
+RUN apt-get update
+RUN apt-get install -y libpcre3-dev
 RUN wget -q -O /opt/R-3.3.2.tar.gz https://cran.r-project.org/src/base/R-3/R-3.3.2.tar.gz
 RUN tar xvzf /opt/R-3.3.2.tar.gz -C /opt/
 RUN cd /opt/R-3.3.2;./configure;make;make install
@@ -141,3 +142,8 @@ RUN echo 'biocLite()' >> /opt/packages.r
 RUN echo 'biocLite(c("Rsubread", "dupRadar", "limma", "lattice", "locfit", "edgeR", "chron", "data.table", "gtools", "gdata", "bitops", "caTools", "gplots", "DESeq2", "FactoMineR", "ReportingTools"))' >> /opt/packages.r
 RUN Rscript /opt/packages.r
 RUN mkdir /usr/local/lib/R/site-library
+
+
+# Default command
+WORKDIR /data
+CMD ["bash"]
