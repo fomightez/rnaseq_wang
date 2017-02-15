@@ -85,7 +85,7 @@ Usage
 
 	Make a directory called `data` on local machine upon which you'll be running Docker. This is a directory where you'll place your data. Make a note of the path. For example, on my Mac I made it with the path `/Users/Wayne/data`. You can use your graphical OS or a command line to make the local directory. Doesn't matter how as long as you make one to serve as where you link the `data` directory within your container by binding a volume.
 
-	However you aquire the data, move it into that folder. If you obtained the data as the `supp_data.tar.gz` file you'll need to uncompress it. Because it contains all the output files generated as well. I suggest sticking in with a directory called `dl` within the `data` directory`. Move the raw reads back out to `data` with the following commands
+	However you aquire the data, move it into that folder. If you obtained the data as the `supp_data.tar.gz` file you'll need to unpack it. Because it contains all the output files generated as well. I suggest sticking in with a directory called `dl` within the `data` directory`. Move the raw reads back out to `data` with the following commands
 
 	PUT COMMANDS TO DO THAT HERE
 
