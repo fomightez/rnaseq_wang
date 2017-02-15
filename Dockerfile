@@ -41,12 +41,10 @@ RUN export JAVA_HOME
 
 
 # Install SRA Toolkit
-# ***Installing this even thought it may not work on campus network. ***
-# clone repo
 WORKDIR /src
-RUN wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.4.4/sratoolkit.2.4.4-ubuntu64.tar.gz" && \
-    tar zxfv sratoolkit.2.4.4-ubuntu64.tar.gz && \
-    cp -r sratoolkit.2.4.4-ubuntu64/bin/* /usr/bin
+RUN wget "http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/2.8.1-3/sratoolkit.2.8.1-3-ubuntu64.tar.gz" && \
+    tar zxfv sratoolkit.2.8.1-3-ubuntu64.tar.gz && \
+    cp -r sratoolkit.2.8.1-3-ubuntu64/bin/* /usr/bin
 
 
 
