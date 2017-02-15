@@ -51,7 +51,7 @@ Usage
 
 1. Get the container based on the image running.
 
-	(Because the data files are large, you may want to at least start that download at this point. See below. While that is downloading you can also be setting up the Docker container.)
+	(Because the data files are large, you may want to at least start that download at this point. See below. While that is downloading, you can also be setting up the Docker container.)
 
 	If you haven't already, make a directory called `data` on local machine upon which you'll be running Docker. This is a directory where you'll place your data. Make a note of the path. For example, on my Mac I made it with the path `/Users/Wayne/data`. You can use your graphical OS or a command line to make the local directory. Doesn't matter how as long as you make one to serve as where you link the `data` directory within your container by binding a volume.
 
