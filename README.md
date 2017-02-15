@@ -55,8 +55,6 @@ Usage
 
 	If you haven't already, make a directory called `data` on local machine upon which you'll be running Docker. This is a directory where you'll place your data. Make a note of the path. For example, on my Mac I made it with the path `/Users/Wayne/data`. You can use your graphical OS or a command line to make the local directory. Doesn't matter how as long as you make one to serve as where you link the `data` directory within your container by binding a volume.
 
-
-
 	Then in your terminal issue the command to get and run the container
 
 		docker run -v /Users/Wayne/data:/data -it fomightez/rnaseqwang
