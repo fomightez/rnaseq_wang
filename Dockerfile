@@ -98,8 +98,12 @@ RUN rm /opt/samtools-1.3.1.tar.bz2
 
 
 
-# Instal Bowtie2 and TopHat2
+# Install Bowtie2 and TopHat2
 # specifically TopHat 2.1.1 with Bowtie 2.3.0
+# Set working directory in /bin for TopHat 2.1.1 with Bowtie 2.3.0 INSTALL
+WORKDIR /bin
+# install special Threading Building Blocks needed for newest Bowtie2
+RUN apt-get install -y libtbb-dev
 # Download TopHat2
 RUN wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.Linux_x86_64.tar.gz
 # Download Bowtie2
