@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Wayne Decatur *(fomightez on Github)*
 
-#Install container-wide requrements gcc, python pip, zlib, libssl, make, libncurses, fortran77, g++,wget#
+#Install container-wide requrements gcc, python pip, zlib, libssl, make, libncurses, fortran77, g++,wget,scree#
 RUN apt-get update
 RUN apt-get install -y libreadline-dev
 RUN apt-get install -y gcc
@@ -14,6 +14,7 @@ RUN apt-get install -y gfortran
 RUN apt-get install -y g++
 RUN apt-get install -y wget
 RUN apt-get install -y curl
+RUN apt-get install -y screen
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
 RUN apt-get install -y libpcre3-dev
