@@ -38,6 +38,18 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 RUN export JAVA_HOME
 
 
+# Install HTSeq
+# Python 2.7 installation already handled. Important it be 2.7 because that is
+# presently the version HTSeq works with.
+#Install HtSeq
+RUN curl https://pypi.python.org/packages/source/H/HTSeq/HTSeq-0.6.1.tar.gz#md5=b7f4f38a9f4278b9b7f948d1efbc1f05 > HTSeq-0.6.1.tar.gz && \
+   tar -xzf HTSeq-0.6.1.tar.gz && \
+   rm HTSeq-0.6.1.tar.gz && \
+   cd HTSeq-0.6.1 && \
+   ls && \
+   python setup.py install --user && \
+   ln -s $PWD/build/scripts-2.7/htseq-count /bin
+
 
 
 # Install SRA Toolkit
@@ -77,17 +89,6 @@ RUN curl -L -o $APP_NAME-$VERSION.zip \
 
 
 
-
-# Install HTSeq
-# Python 2.7 installation already handled. Important it be 2.7 because that is
-# presently the version HTSeq works with.
-#Install HtSeq
-RUN curl https://pypi.python.org/packages/source/H/HTSeq/HTSeq-0.6.1.tar.gz#md5=b7f4f38a9f4278b9b7f948d1efbc1f05 > HTSeq-0.6.1.tar.gz && \
-   tar -xzf HTSeq-0.6.1.tar.gz && \
-   rm HTSeq-0.6.1.tar.gz && \
-   cd HTSeq-0.6.1 && \
-   ls && \
-   python setup.py install --user
 
 
 #Install SAMTools
