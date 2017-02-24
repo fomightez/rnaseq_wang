@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
 MAINTAINER Wayne Decatur *(fomightez on Github)*
 
-#Install container-wide requrements gcc, python pip, zlib, libssl, make, libncurses, fortran77, g++, unzip, wget#
+# Install container-wide requrements gcc, python pip, zlib, libssl, make,
+# libncurses, fortran77, g++, unzip, wget, screen #
 RUN apt-get update
 RUN apt-get install -y libreadline-dev
 RUN apt-get install -y gcc
@@ -15,6 +16,7 @@ RUN apt-get install -y g++
 RUN apt-get install -y wget
 RUN apt-get install -y curl
 RUN apt-get install -y unzip
+RUN apt-get install -y screen
 RUN apt-get install -y libbz2-dev
 RUN apt-get install -y liblzma-dev
 RUN apt-get install -y libpcre3-dev
@@ -100,9 +102,12 @@ RUN rm /opt/samtools-1.3.1.tar.bz2
 
 
 # Install latest TopHat2 and old version of Bowtie2
+################################################################################
 # specifically TopHat 2.1.1 with Bowtie 2.2.3. That is specifically last
-# Bowtie2 version noted as compatible with TopHat2 but unfortunately it was down
-# the page somewhat at https://ccb.jhu.edu/software/tophat/index.shtml .
+# Bowtie2 version noted as compatible with TopHat2 but unfortunately the last
+# information on compatibility was situated down the page somewhat at
+# https://ccb.jhu.edu/software/tophat/index.shtml .
+################################################################################
 # Set working directory in /bin for TopHat 2.1.1 with Bowtie 2.2.3 INSTALL
 WORKDIR /bin
 # install special Threading Building Blocks library needed for Bowtie2 2.3.0
