@@ -99,31 +99,34 @@ RUN rm /opt/samtools-1.3.1.tar.bz2
 
 
 
-# Install Bowtie2 and TopHat2
-# specifically TopHat 2.1.1 with Bowtie 2.3.0
-# Set working directory in /bin for TopHat 2.1.1 with Bowtie 2.3.0 INSTALL
+# Install latest TopHat2 and old version of Bowtie2
+# specifically TopHat 2.1.1 with Bowtie 2.2.3. That is specifically last
+# Bowtie2 version noted as compatible with TopHat2 but unfortunately it was down
+# the page somewhat at https://ccb.jhu.edu/software/tophat/index.shtml .
+# Set working directory in /bin for TopHat 2.1.1 with Bowtie 2.2.3 INSTALL
 WORKDIR /bin
 # install special Threading Building Blocks library needed for Bowtie2 2.3.0
 RUN apt-get install -y libtbb-dev
 # Download TopHat2
 RUN wget http://ccb.jhu.edu/software/tophat/downloads/tophat-2.1.1.Linux_x86_64.tar.gz
 # Download Bowtie2
-RUN wget --default-page=bowtie2-2.3.0-linux-x86_64.zip http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.0/bowtie2-2.3.0-linux-x86_64.zip/
+RUN wget --default-page=bowtie2-2.2.3-linux-x86_64.zip http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.3/bowtie2-2.2.3-linux-x86_64.zip/
 # Unzip the archive
 RUN tar zxvf tophat-2.1.1.Linux_x86_64.tar.gz
 # Remove the archive
 RUN rm tophat-2.1.1.Linux_x86_64.tar.gz
 # Unzip the archive
-RUN unzip bowtie2-2.3.0-linux-x86_64.zip
+RUN unzip bowtie2-2.2.3-linux-x86_64.zip
 # Remove the archive
-RUN rm bowtie2-2.3.0-linux-x86_64.zip
+RUN rm bowtie2-2.2.3-linux-x86_64.zip
 # Working directory in Bowtie2
-WORKDIR /bin/bowtie2-2.3.0
+WORKDIR /bin/bowtie2-2.2.3
 # Symbolic link from "bowtie" to "bowtie2"
 RUN ln -s bowtie2 bowtie
 # Change in PATH
 ENV PATH $PATH:/bin/tophat-2.1.1.Linux_x86_64
-ENV PATH $PATH:/bin/bowtie2-2.3.0
+ENV PATH $PATH:/bin/bowtie2-2.2.3
+
 
 
 
