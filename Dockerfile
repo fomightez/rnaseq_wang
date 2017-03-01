@@ -157,6 +157,7 @@ RUN mkdir /usr/local/lib/R/site-library
 
 
 # Making so screen program starts up with Bash shell so that tab-completion and other features work
+ENV HOME /root
 WORKDIR $HOME
 RUN cp /etc/screenrc .
 RUN mv screenrc .screenrc
