@@ -155,6 +155,15 @@ RUN Rscript /opt/packages.r
 RUN mkdir /usr/local/lib/R/site-library
 
 
+
+# Making so screen program starts up with Bash shell so that tab-completion and other features work
+WORKDIR $HOME
+RUN cp /etc/screenrc .
+RUN mv screenrc .screenrc
+RUN echo -e "# ~/.screenrc\ndefshell -bash      # dash makes it a login shell\n" >> .screenrc
+RUN echo -e "defshell -bash      # dash makes it a login shell\n$(cat .screenrc)" > .screenrc
+
+
 # Default command
 WORKDIR /data
 CMD ["bash"]
