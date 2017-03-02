@@ -142,10 +142,10 @@ RUN apt-get install -y xorg-dev
 RUN add-apt-repository -y "ppa:edd/misc"
 RUN apt-get update
 RUN apt-get install -y libpcre3-dev
-RUN wget -q -O /opt/R-3.3.2.tar.gz https://cran.r-project.org/src/base/R-3/R-3.3.2.tar.gz
-RUN tar xvzf /opt/R-3.3.2.tar.gz -C /opt/
-RUN cd /opt/R-3.3.2;./configure;make;make install
-RUN rm /opt/R-3.3.2.tar.gz
+RUN wget -q -O /opt/R-3.3.1.tar.gz https://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz
+RUN tar xvzf /opt/R-3.3.1.tar.gz -C /opt/
+RUN cd /opt/R-3.3.1;./configure;make;make install
+RUN rm /opt/R-3.3.1.tar.gz
 
 #Install R Packages
 RUN echo 'source("https://bioconductor.org/biocLite.R")' > /opt/packages.r
