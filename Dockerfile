@@ -139,10 +139,11 @@ ENV PATH $PATH:/bin/bowtie2-2.2.3
 #Install R
 RUN apt-get install -y libicu-dev
 RUN apt-get install -y xorg-dev
+RUN apt-get install -y libxml2-dev
 RUN add-apt-repository -y "ppa:edd/misc"
 RUN apt-get update
 RUN apt-get install -y libpcre3-dev
-# R 3.3.1 is the latest that works with Bioconductor packages for Bioconductory 3.4 (of which DESeq2 is one)
+# R 3.3.1 is the latest that works with Bioconductor packages for Bioconductor 3.4 (of which DESeq2 is one)
 RUN wget -q -O /opt/R-3.3.1.tar.gz https://cran.r-project.org/src/base/R-3/R-3.3.1.tar.gz
 RUN tar xvzf /opt/R-3.3.1.tar.gz -C /opt/
 RUN cd /opt/R-3.3.1;./configure;make;make install
