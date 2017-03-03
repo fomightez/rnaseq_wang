@@ -30,7 +30,8 @@ Includes:
 * R
 * Bioconductor and needed packages
 
-*Specific versions and sources are made clear in [the Dockerfile](https://github.com/fomightez/rnaseq_wang/blob/master/Dockerfile).*
+*Specific versions and sources are made clear in [the Dockerfile](https://github.com/fomightez/rnaseq_wang/blob/master/Dockerfile).*  
+*See [here](http://tophat2-and-bowtie-compatibility.readthedocs.io/en/latest/) and [here](http://r-and-bioconductor-compatibility.readthedocs.io/en/latest/) for additional information related to versions.*
 
 Requirements
 ------------
