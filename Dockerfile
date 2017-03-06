@@ -152,8 +152,7 @@ RUN rm /opt/R-3.3.1.tar.gz
 #Install R Packages
 RUN echo 'source("https://bioconductor.org/biocLite.R")' > /opt/packages.r
 RUN echo 'biocLite()' >> /opt/packages.r
-RUN echo 'biocLite(c("Rsubread", "dupRadar", "limma", "lattice", "locfit", "edgeR", "chron", "data.table", "gtools", "gdata", "bitops", "caTools", "gplots", "DESeq2", "FactoMineR", "ReportingTools"))' >> /opt/packages.r
-RUN Rscript /opt/packages.r
+RUN echo 'biocLite(c("Rsubread", "dupRadar", "limma", "lattice", "locfit", "edgeR", "chron", "data.table", "gtools", "gdata", "bitops", "caTools", "gplots", "DESeq2", "FactoMineR", "ReportingTools", "pheatmap", "RColorBrewer"))' >> /opt/packages.r
 RUN mkdir /usr/local/lib/R/site-library
 
 
