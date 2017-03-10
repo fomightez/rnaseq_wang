@@ -179,9 +179,10 @@ RUN cp /etc/screenrc . && \
 # other traces to try and limit the increase in the size of the docker image.
 # This eliminates a huge download later just to get two relatively small files.
 WORKDIR /genome
-RUN wget -O genome/supp_data.tar.gz http://cgob.ucd.ie/supp_data/supp_data.tar.gz  && \
-   tar zxvf genome/supp_data.tar.gz --directory /genome/dl && \
-   rm -f genome/supp_data.tar.gz  && \
+RUN wget -O /genome/supp_data.tar.gz http://cgob.ucd.ie/supp_data/supp_data.tar.gz && \
+   mkdir dl && \
+   tar zxvf /genome/supp_data.tar.gz --directory /genome/dl && \
+   rm -f /genome/supp_data.tar.gz  && \
    cp /genome/dl/ngs/data/cpar.fa .  && \
    cp /genome/dl/ngs/data/cpar.gff .  && \
    rm -rf dl
