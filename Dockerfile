@@ -1,3 +1,4 @@
+# Dockerfile to build Wang et al 2016 RNA-seq pipeline container images
 FROM ubuntu:14.04
 LABEL maintainer "Wayne Decatur *(fomightez on Github)*"
 
